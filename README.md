@@ -1,7 +1,7 @@
 STW-Collection
 ==============
 
-**S**crap **T**he **W**eb **C**ollection.
+Scrap The Web Collection.
 
 This repo contains to scrap the following kind of websites :
 
