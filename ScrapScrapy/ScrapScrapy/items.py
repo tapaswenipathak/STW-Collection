@@ -11,7 +11,7 @@ from scrapy.item import Item, Field
 class ScrapscrapyItem(Item):
     # define the fields for your item here like:
     # name = Field()
-    Heading = Field ()
-    Content = Field ()
-    Source_Website = Field ()
+    Heading = Field()
+    Content = Field()
+    Source_Website = Field()
     pass
