@@ -7,10 +7,11 @@
 
 from scrapy.item import Item, Field
 
+
 class TryItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-	Title = Field ()
-	
-	#You can add more fields
-	pass
+    Title = Field()
+
+    # You can add more fields
+    pass

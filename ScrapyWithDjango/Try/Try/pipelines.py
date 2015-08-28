@@ -7,18 +7,21 @@
 
 from scrapy.exceptions import DropItem
 
+
 class TryPipeline(object):
+
     def process_item(self, item, spider):
         return item
 
-class DuplicatesPipeline(object) :
-    def __init__(self) :
-        self.ids_seen = set ()
 
-    def process_item(self, item, spider) :
-        if str(item['Title']) in self.ids_seen :
+class DuplicatesPipeline(object):
+
+    def __init__(self):
+        self.ids_seen = set()
+
+    def process_item(self, item, spider):
+        if str(item['Title']) in self.ids_seen:
             raise DropItem("Duplicate item found: %s" % item)
-        else :
+        else:
             self.ids_seen.add(str(item['Title']))
             return item
-
