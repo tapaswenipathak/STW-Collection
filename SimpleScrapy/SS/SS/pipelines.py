@@ -6,7 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-class TryPipeline(object):
+class SSPipeline(object):
     def process_item(self, item, spider):
         return item
 

@@ -8,10 +8,10 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #
 
-BOT_NAME = 'Try'
+BOT_NAME = 'SWD'
 
-SPIDER_MODULES = ['Try.spiders']
-NEWSPIDER_MODULE = 'Try.spiders'
+SPIDER_MODULES = ['SWD.spiders']
+NEWSPIDER_MODULE = 'SWD.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'Forestessentialsindia (+http://www.yourdomain.com)'

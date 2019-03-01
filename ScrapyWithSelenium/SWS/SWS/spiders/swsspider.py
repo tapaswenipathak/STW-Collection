@@ -4,7 +4,7 @@
 from scrapy.selector import Selector
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
-from Try.items import TryItem
+from SWS.items import SWSItem
 from selenium import selenium
 from selenium import webdriver
 from scrapy.http import FormRequest
@@ -18,11 +18,11 @@ import time
 import re
 
 
-class TrySpider (CrawlSpider):
+class SWSSpider (CrawlSpider):
     handle_httpstatus_list = [302]
-    name = "try"
+    name = "sws"
     # Add allowed domains, leave blank to allow all
-    allowed_domains = ["try.com"]
+    allowed_domains = ["sws.com"]
     start_urls = ['']  # Add start urls in this
 
     rules = (
@@ -34,7 +34,7 @@ class TrySpider (CrawlSpider):
         CrawlSpider.__init__(self)
         self.verificationErrors = []
         self.selenium = selenium(
-            "localhost", 4444, "*chrome", "http://www.try.com")
+            "localhost", 4444, "*chrome", "http://www.sws.com")
         self.selenium.start()
 
     def __del__(self):
@@ -44,13 +44,13 @@ class TrySpider (CrawlSpider):
 
     def parse_item(self, response):
         sel = Selector(response)
-        item = TryItem()
+        item = SWSItem()
         sel1 = self.selenium
         sel1.open(response.url)
         # Wait for javscript to load in Selenium
         time.sleep(2.5)
         # Do some crawling of javascript created content with Selenium
-        item['Source_Website'] = "https://www.try.com"
+        item['Source_Website'] = "https://www.sws.com"
         # write your xpath, it's a bit different for selenium
         item['Title'] = sel1.get_text('')
 

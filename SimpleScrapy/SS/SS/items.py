@@ -7,16 +7,8 @@
 
 from scrapy.item import Item, Field
 
-
-class TryItem(Item):
+class SSItem(Item):
     # define the fields for your item here like:
-    # name = Field()
-    Title = Field()
-    Price = Field()
-    Description = Field()
-    Image_URL = Field()
-    Source_Website = Field()
-    Product_URL = Field()
-    Category = Field()
-    Details = Field()
+    # name = scrapy.Field()
+    Title = Field ()
     pass

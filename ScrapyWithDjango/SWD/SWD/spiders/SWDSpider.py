@@ -1,7 +1,7 @@
 from scrapy.selector import Selector
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
-from Try.items import TryItem
+from SWD.items import SWDItem
 import re
 import sys
 import os
@@ -12,11 +12,11 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project_name.settings")
 from product.models import Product
 
 
-class TrySpider (CrawlSpider):
+class SWDSpider (CrawlSpider):
   handle_httpstatus_list = [302]
-  name = "try"  # Your spider namme
-  allowed_domains = ["try.com"]  # Domain name
-  start_urls = ['www.try.com/abc.html']  # Start URL, can be more than one
+  name = "swd"  # Your spider namme
+  allowed_domains = ["swd.com"]  # Domain name
+  start_urls = ['www.swd.com/abc.html']  # Start URL, can be more than one
 
 						]
   # Can have multiple rules, exits on first rule matched
@@ -27,7 +27,7 @@ class TrySpider (CrawlSpider):
   # Calls parse_item when rule matched
   def parse_item(self, response) :
     sel = Selector (response)
-    item =  TryItem ()
+    item =  SWDItem ()
     item['Title'] = #Xpath for title
     item['Category'] = #xpath for some other field
     item['Product_URL'] = response.request.url #this gives the current url cralwed

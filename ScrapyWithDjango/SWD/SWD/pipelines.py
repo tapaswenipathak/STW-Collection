@@ -8,7 +8,7 @@
 from scrapy.exceptions import DropItem
 
 
-class TryPipeline(object):
+class SWDPipeline(object):
 
     def process_item(self, item, spider):
         return item
